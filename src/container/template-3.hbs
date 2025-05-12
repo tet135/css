@@ -1,0 +1,78 @@
+<header class="header">
+	<a class="" href="#test">
+		{{>logo }}
+	</a>
+
+	<nav class="header_link">
+		<div class="header_nav_right">
+			{{>nav list=header }}
+		</div>
+	</nav>
+</header>
+
+
+
+<div class="hero_container">
+	{{#with hero}}
+	<div class="hero">
+		<div class="hero_content">
+			<h1 class="hero_title">{{title}}</h1>
+			<p class="hero_text">{{text}}</p>
+		</div>
+		<div class="hero_slider">
+			<div class="hero_slider_icon hero_slider_left">{{left}}</div>
+			<img class="hero_image" src="{{photo}}" alt="hero_image">
+			<div class="hero_slider_icon hero_slider_right">{{right}}</div>
+		</div>
+	</div>
+	{{/with}}
+</div>
+
+{{!-- <div class="modal">
+	<img class="modal_image" src="{{hero.photo}}" alt="hero_image">
+	<div class="modal_text">
+		{{hero.text}}{{hero.text}}{{hero.text}}
+	</div>
+</div> --}}
+
+{{!-- <input class="input"> --}}
+
+<main class="blog">
+	{{#each blog}}
+	<div class="card">
+		<div class="card_image" style="background-image: url({{img}})"></div>
+		<h2 class="card_title">{{title}}</h2>
+		<p class="card_text">{{text}}</p>
+		<a href="{{href}}" class="button card_button">{{button}}</a>
+	</div>
+	{{/each}}
+</main>
+
+{{#with form}}
+<div class="form">
+	<div class="form_content">
+		<h3 class="form_title">
+			{{title}}
+		</h3>
+		<p class="form_info">{{info}}<span class="ex">x</span></p>
+	</div>
+	<div class="form_action">
+		<a href="{{href}}" class="button form_button">{{button}}</a>
+	</div>
+</div>
+{{/with}}
+
+<footer class="footer" id="test">
+	<div>
+		{{>logo }}
+		<span class="header_copyright">Copyright 2023-2024</span>
+	</div>
+	{{#each footer}}
+	<div>
+		<span class="footer_title">{{title}}</span>
+		{{>nav list=links isVertical=true}}
+	</div>
+	{{/each}}
+</footer>
+
+<div class="test">test</div>
